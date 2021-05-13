@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+            <link rel="stylesheet" href="stylehome.css">
+{% endblock %}
+{% block body %}
+	<h2 class="text text-center">All Hobbies</h2>
+	{% for hobby in hobbies %}
+
+		<div class="container d-flex justify-content-center">
+        <div class="col-sm-4 my-3">
+			<div class="row">
+				<div class="sm-4">
+					<div class="card p-1" id="shadowCard" style="width: 18rem;">
+						<img src="pictures/{{hobby.image}}" class="card-img-top" alt="{{hobby.name}}">
+						<div class="card-body">
+							<h5 class="card-title">{{hobby.name}}</h5>
+							<p class="card-text">{{hobby.category}}</p>
+							<p class="card-text">{{hobby.dueDate|date('F j, Y, g:i a')}}</p>
+							<a href="#" class="btn btn-success">Details</a>
+							<a href="#" class="btn btn-primary btn-primary">Edit</a>
+							<a href="#" class="btn btn-primary btn-danger">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+            </div>
+		</div>
+	{% endfor %}
+{% endblock %}

@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+         
+    
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
+        {% include "components/bootcss.html.twig" %}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+      
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +17,10 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% include "components/navbar.html.twig" %}
+        {% block body %}
+        
+        {% endblock %}
+        {% include "components/bootjs.html.twig" %}
     </body>
 </html>
